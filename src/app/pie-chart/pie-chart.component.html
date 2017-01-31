@@ -1,0 +1,10 @@
+<div *ngIf="chartData">
+  <canvas baseChart [data]="chartData?.data" [labels]="chartData?.labels" [chartType]="'pie'" (chartClick)="chartClicked($event)"
+  (chartHover)="chartHovered($event)"></canvas>
+</div>
+<div *ngIf="errorMessage">
+  <p>{{errorMessage}}</p>
+</div>
+<md-select name="months" [ngModel]="selectedMonth" (ngModelChange)="changeMonth($event)">
+  <md-option *ngFor="let month of months" [value]="month.value">{{month.text}}</md-option>
+</md-select> 

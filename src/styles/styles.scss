@@ -1,19 +1,48 @@
 /* this file will be extracted to main dist folder and is imported in index.html */
+
+
 /* This file is for setting global styles  */
+// @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+@import '~@angular/material/core/theming/all-theme';
+@include md-core();
+$primary: md-palette($md-indigo, 800);
+$accent:  md-palette($md-light-blue, 600, A100, A400);
+$warn:    md-palette($md-red, 600);
+$theme: md-light-theme($primary, $accent, $warn);
+@include angular-material-theme($theme);
+
 @import 'variables';
 
-nav {
-  margin-top: 16px;
+body {
+  font-family: "Roboto", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  margin: 0;
+  color: $font-color;
 }
 
-nav a {
-  background-color: $nav-button-color;
-  color: white;
-  padding: 8px 16px;
-  margin: 8px;
-  vertical-align: middle;
-  line-height: 1.25;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 4px;
+.pinned-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.layer-5 {
+  z-index: 5;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.background-grey {
+  background: $grey-color;
+}
+
+.background-midnight {
+  background: $midnight-color;
+  color: $white-color;
 }

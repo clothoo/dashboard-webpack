@@ -1,0 +1,11 @@
+<div *ngIf="chartData">
+  <div class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutAlign.xs="start start">
+    <div class="flex-item" fxFlex="10%"></div>
+    <div class="flex-item" fxFlex="80%">
+      <md-card>
+        <canvas baseChart [datasets]="chartData?.data" [labels]="chartData?.labels" [chartType]="'line'" (chartClick)="chartClicked($event)"></canvas>
+      </md-card>
+    </div>
+    <div class="flex-item" fxFlex="10%"></div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+:host(.content) {
+  display: block;
+  padding: 64px 96px;
+  margin: 0 auto;
+}

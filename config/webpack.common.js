@@ -59,9 +59,9 @@ module.exports = function (options) {
     entry: {
 
       'polyfills': './src/polyfills.browser.ts',
+      'vendor': helpers.root('node_modules/chart.js/src/chart.js'),
       'main':      AOT ? './src/main.browser.aot.ts' :
                   './src/main.browser.ts'
-
     },
 
     /*
