@@ -7,19 +7,21 @@ import { DebugElement } from '@angular/core';
 import { MaterialModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { ChartService } from '../services';
 import { LineChartComponent } from './line-chart.component';
+
+import 'chart.js';
 
 describe('LineChartComponent', () => {
   let component: LineChartComponent;
   let fixture: ComponentFixture<LineChartComponent>;
+  let de: DebugElement;
+  let el: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ ChartsModule, MaterialModule.forRoot(), RouterTestingModule ],
       declarations: [ LineChartComponent ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-      providers: [ ChartService ]
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
   }));
@@ -34,7 +36,8 @@ describe('LineChartComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have hostClass', () => {
-    expect(component.hostClass).not.toBeNull();
+  it('should have hostClass content', () => {
+    expect(component.hostClass).toEqual('content');
   });
+
 });

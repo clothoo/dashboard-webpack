@@ -1,4 +1,4 @@
-<div *ngIf="chartData">
+<div class="chart" *ngIf="chartData">
   <canvas baseChart [data]="chartData?.data" [labels]="chartData?.labels" [chartType]="'pie'" (chartClick)="chartClicked($event)"
   (chartHover)="chartHovered($event)"></canvas>
 </div>

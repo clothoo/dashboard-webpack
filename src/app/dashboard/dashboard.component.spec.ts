@@ -35,9 +35,8 @@ describe('DashboardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have hostClass', () => {
+  it('should have hostClass content', () => {
     expect(component.hostClass).toEqual('content');
-    expect(el.textContent).toEqual('Services');
   });
 
   it('should have Services heading', () => {

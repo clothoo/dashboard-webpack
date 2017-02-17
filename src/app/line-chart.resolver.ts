@@ -7,7 +7,7 @@ import { ChartService } from './services';
 @Injectable()
 export class LineChartResolver implements Resolve<ChartData> {
 
-  constructor(private chartService: ChartService) {}
+  constructor(private chartService: ChartService) { }
 
   public resolve(route: ActivatedRouteSnapshot) {
     return this.chartService.getLineChartData(route.params['type'], route.params['system'], +route.params['month']);

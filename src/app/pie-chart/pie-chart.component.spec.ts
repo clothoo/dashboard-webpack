@@ -44,14 +44,14 @@ describe('PieChartComponent', () => {
     fixture = TestBed.createComponent(PieChartComponent);
   });
 
-  it('should create with no data', () => {
+  it('should create with no data', async(() => {
     component = fixture.componentInstance;
     fixture.detectChanges();
     expect(component).toBeTruthy();
     expect(component.selectedMonth).toBe(new Date().getUTCMonth());
     expect(component.chartData).toEqual(undefined);
     expect(component.errorMessage).toEqual('No usage');
-  });
+  }));
 
   it('should create with data (fakeAsync)', fakeAsync(() => {
     component = fixture.componentInstance;
@@ -64,5 +64,15 @@ describe('PieChartComponent', () => {
     expect(component.chartData.labels).toEqual([ 'RT' ]);
     expect(component.chartData.data).toEqual([ 234 ]);
     expect(component.errorMessage).toEqual(undefined);
+  }));
+
+  it('should goto line chart when clicked', async(() => {
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+    de = fixture.debugElement.query(By.css('div'));
+    expect(de).not.toBeNull();
+    el = de.nativeElement;
+    expect(el).not.toBeNull();
+    de.triggerEventHandler('click', null);
   }));
 });
